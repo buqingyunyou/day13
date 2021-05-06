@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    包:
+      符合包管理规定的文件夹, 就可以称之为 包
+      包是一个具有package.json文件(必备)的文件夹
+    包通常包括:
+      package.json  (描述文件, 必备)
+      bin           (可执行的二进制文件)
+      lib           (js代码)
+      doc           (文档)
+      test          (单元测试)
+      package-lock.json (引入第三方包后,出现的josn文件,记录第三方包的具体版本信息,及下载地址)
+    
+    将普通文件夹 -> 包:
+      命令行:
+        npm init (初始化), 即可将当前文件夹转为包
+        注意: 包名不能含有中文, 大写字母, 且保证包名不能重复, 否则后者无法下载
+
+
+    package.json (dependencies)
+      记录当前项目所有的依赖, 版本号一般不固定, 下载最新版本
+    package-lock.json (dependencies)
+      记录当前项目所有的依赖, 具体版本号, 依赖的下载地址
+
+    
+    npm和node
+    安装node后, 默认自动安装npm包管理器
+
+
+    npm常用命令:
+      1. npm init            初始化包
+         npm init -y         快速创建包
+
+      2. npm install/i 包名           安装指定包的最新版本
+         npm install/i 包名@x.x.x     安装指定包的指定版本
+         npm install/i 包名 包名      安装多个指定包
+
+         npm install/i 包名      
+         npm install/i 包名 --save    
+         都是下载安装生产依赖 (添加到dependencies中)
+
+         npm install/i 包名 --save-dev  
+         npm install/i 包名 -D        
+         都是下载安装开发依赖 (某些依赖只在开发环境使用,在生产环境并不需要, 此时注意声明为开发依赖)  (添加到devDependencies中)
+                   
+      3. npm install/i
+        当首次从git拉下项目代码后, 包结构中是没有node-modules, 此时需要生成,即根据package-lock.json或package.json, 下载安装项目所有的依赖包
+
+      4. npm install/i xxx -g
+        下载安装工具包, 在全局安装
+
+      5. 移除自定依赖包
+        npm remove/r 包名
+
+    
+    版本号
+      1. ^3.3.1  表示锁定大版本, 下载3.x.x的最新版本
+      2. ~3.3.1  表示锁定小版本, 下载3.3.x的最新版本
+      3. 3.3.1   表示锁定具体版本 (严格锁定)
+   -->
+</body>
+</html>
